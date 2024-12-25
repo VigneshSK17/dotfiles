@@ -1,0 +1,17 @@
+;; Capslock - Tap: Esc, Hold: Ctrl
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps
+)
+
+(defalias
+  cec (tap-hold 200 200 esc lctl)
+)
+
+(deflayer default
+  @cec
+)

@@ -1,5 +1,5 @@
 # Set PATH and other env vars
-export PATH=$HOME/.local/bin:/opt/local/bin:$PATH
+export PATH=$HOME/.local/bin:/opt/local/bin:$HOME/.pyenv/bin/:$PATH
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8

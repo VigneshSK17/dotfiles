@@ -1,0 +1,13 @@
+[Unit]
+Description=Kanata service
+After=user.slice
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=/home/vigsk17/.local/bin/kanata --cfg /home/vigsk17/.config/kanata/config.kbd
+Type=simple
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+
