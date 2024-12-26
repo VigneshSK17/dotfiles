@@ -80,3 +80,5 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 elif [[ "$(uname -s)" == "Linux" ]]; then
 	# Linux-specific commands
 fi
+
+source /Users/vigsk17/.docker/init-zsh.sh || true # Added by Docker Desktop
