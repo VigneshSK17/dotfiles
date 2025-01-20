@@ -160,11 +160,11 @@ set('i', 'jk', '<ESC>', { noremap = true, silent = false })
 -- Files
 set('n', '<leader>cr', ':source $MYVIMRC<CR>', { noremap = true, silent = false }) -- reload config
 set('n', '<leader>W', ':silent w !sudo tee % > /dev/null | :edit!<CR>', { noremap = true, silent = false }) -- save with root
-set('n', '<leader>pf', ':FzfLua files<cr>', { noremap = true, silent = false }) -- Open fzf in folder
-set('n', '<leader>pv', vim.cmd.Ex) -- Open default file picker
--- map('n', '<leader>fa', ':FzfLua files ~<cr>', { noremap = true, silent = false }) -- Open fzf in ~
--- map('n', '<leader>ss', 'Ag:<cr>', {noremap = true, silent = false}) -- Search in folder
+set('n', '<leader>fc', ':FzfLua files<cr>', { noremap = true, silent = false }) -- Open fzf in folder
+set('n', '<leader>fp', ':FzfLua oldfiles <cr>', { noremap = true, silent = false }) -- Open fzf's previously opened files
+set('n', '<leader>fa', ':FzfLua files cwd=~<cr>', { noremap = true, silent = false }) -- Open fzf in ~
+set('n', '<leader>fv', vim.cmd.Ex) -- Open default file picker
 
 -- Coding
-set('', '<leader>cc', ':copen | :term <CR>i', { noremap = true, silent = true }) -- Open terminal
+set('', '<leader>tn', ':copen | :term <CR>i', { noremap = true, silent = true }) -- Open terminal
 set('t', '<C-w>', '<C-\\><C-n>:quit<cr>', { noremap = true, silent = true }) -- Close terminal ez
