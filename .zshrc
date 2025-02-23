@@ -62,6 +62,9 @@ bindkey '^I' $fzf_default_completion
 # Aliases
 alias ls="lsd -lah --git"
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias glp='git log --pretty=format:"%C(yellow)%h%Creset - %C(green)%an%Creset, %ar : %s"'
+
+
 
 # End of zshrc
 
@@ -71,14 +74,10 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
-	source /Users/vigsk17/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-	#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-	export SDKMAN_DIR="$HOME/.sdkman"
-	[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-elif [[ "$(uname -s)" == "Linux" ]]; then
+if [[ "$(uname -s)" == "Linux" ]]; then
 	# Linux-specific commands
 fi
 
-source /Users/vigsk17/.docker/init-zsh.sh || true # Added by Docker Desktop
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
