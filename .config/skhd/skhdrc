@@ -5,8 +5,8 @@ alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east 
 
 # Change display focus
-alt - s: yabai -m display --focus west
-alt - g: yabai -m display --focus east
+alt - w: yabai -m display --focus west
+alt - e: yabai -m display --focus east
 
 # Modify layout
 shift + alt - r: yabai -m space --rotate 270 # rotate layout CW
@@ -30,27 +30,27 @@ shift + alt - l : yabai -m window --swap east
 ctrl + alt - j: yabai -m window --warp south
 ctrl + alt - k: yabai -m window --warp north
 ctrl + alt - h: yabai -m window --warp west
-ctrl + alt - 1 : yabai -m window --warp east
+ctrl + alt - l : yabai -m window --warp east
 
 ## Move window to display
-shift + alt - s: yabai -m window --display west; yabai -m display --focus west;
-shift + alt - g: yabai -m window --display east; yabai -m display --focus east;
+shift + alt - w: yabai -m window --display west; yabai -m display --focus west;
+shift + alt - e: yabai -m window --display east; yabai -m display --focus east;
 
 ## Move window to prev and next space
 shift + alt - p: yabai -m window --space prev;
 shift + alt - n: yabai -m window --space next;
 
 ## Move window to space #
-shift + alt - 1 : yabai -m window --space 1;
-shift + alt - 2 : yabai -m window --space 2;
-shift + alt - 3 : yabai -m window --space 3;
-shift + alt - 4 : yabai -m window --space 4;
-shift + alt - 5 : yabai -m window --space 5;
-shift + alt - 6 : yabai -m window --space 6;
-shift + alt - 7 : yabai -m window --space 7;
-shift + alt - 8 : yabai -m window --space 8;
-shift + alt - 9 : yabai -m window --space 9;
-shift + alt - 0 : yabai -m window --space 10;
+cmd + shift - 1 : yabai -m window --space 1;
+cmd + shift - 2 : yabai -m window --space 2;
+cmd + shift - 3 : yabai -m window --space 3;
+cmd + shift - 4 : yabai -m window --space 4;
+cmd + shift - 5 : yabai -m window --space 5;
+cmd + shift - 6 : yabai -m window --space 6;
+cmd + shift - 7 : yabai -m window --space 7;
+cmd + shift - 8 : yabai -m window --space 8;
+cmd + shift - 9 : yabai -m window --space 9;
+cmd + shift - 0 : yabai -m window --space 10;
 
 ## Start/stop yabai
 ctrl + alt - q: brew services stop yabai
