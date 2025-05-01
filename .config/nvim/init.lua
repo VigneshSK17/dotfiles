@@ -937,7 +937,7 @@ require('lazy').setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      -- require('mini.surround').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
@@ -982,6 +982,25 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+
+  -- custom plugins
+  {
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      require('leap').set_default_mappings()
+    end,
+  },
+
+  {
+    'lervag/vimtex',
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = 'zathura'
+    end,
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the

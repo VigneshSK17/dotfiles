@@ -5,9 +5,6 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
-      }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
@@ -40,6 +37,7 @@ return {
       -- lint.linters_by_ft['ruby'] = nil
       -- lint.linters_by_ft['terraform'] = nil
       -- lint.linters_by_ft['text'] = nil
+      lint.linters_by_ft['markdown'] = nil
 
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
