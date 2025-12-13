@@ -1,5 +1,6 @@
 # Set PATH and other env vars
-export PATH=$HOME/.local/bin:/opt/local/bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home -v 21.0.5)
+export PATH=$HOME/.local/bin:/opt/local/bin:$JAVA_HOME/bin:$PATH
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
@@ -48,6 +49,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 
 # Keybindings
+set -o emacs
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -64,6 +66,8 @@ alias ls="lsd -lah --git"
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias glp='git log --pretty=format:"%C(yellow)%h%Creset - %C(green)%an%Creset, %ar : %s"'
 
+alias antlr4='java -Xmx500M -cp "$HOME/Downloads//antlr-4.13.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "$HOME/Downloads/antlr-4.13.2-complete.jar:./build:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
 
 # End of zshrc
