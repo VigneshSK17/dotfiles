@@ -61,7 +61,7 @@ bindkey '^I' $fzf_default_completion
 
 # Aliases
 alias ls="lsd -lah --git"
-alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # End of zshrc
 
