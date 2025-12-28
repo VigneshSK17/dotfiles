@@ -62,6 +62,8 @@ bindkey '^I' $fzf_default_completion
 # Aliases
 alias ls="lsd -lah --git"
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # End of zshrc
 
@@ -69,7 +71,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	source /Users/vigsk17/.docker/init-zsh.sh || true # Added by Docker Desktop

@@ -1,0 +1,4 @@
+[submodule "/home/vigneshsk/.config/st"]
+	path = /home/vigneshsk/.config/st
+	url = https://gitlab.com/VigneshSK17/st-config.git
+	branch = patches
