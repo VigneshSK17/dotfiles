@@ -22,9 +22,10 @@ super + Escape
 super + a
   emacsclient -ca 'emacs'
 
-# Firefox
+# Browser
 super + q
-  firefox
+  zen-browser
+  # firefox
 
 # Imgur-Screenshot
 super + shift + s

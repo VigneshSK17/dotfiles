@@ -21,7 +21,7 @@ Battery() {
                 echo "$BATPERC%"
         elif [[ $STATE = "Charging" ]]
         then
-                echo "$BATPERC Charging"
+                echo "$BATPERC% Charging"
         elif [[ $BATPERC = 100% || $STATE = "Full" ]]
         then
                 echo " Battery Full"
