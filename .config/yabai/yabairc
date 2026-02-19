@@ -52,5 +52,4 @@ yabai -m rule --add app='^Arc$' title='' manage=off
 yabai -m rule --add app="System Settings" manage=off
 yabai -m rule --add app="Spotify" manage=on
 yabai -m rule --add app="TickTick" title="^$" manage=off
-yabai -m rule --add app="Messages" manage=off
 yabai -m rule --add app="Perplexity" manage=off

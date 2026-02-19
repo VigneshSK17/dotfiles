@@ -7,34 +7,70 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "languages": {
-        "Plain Text": {
-            "show_inline_completions": false
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "ssh_connections": [
+    {
+      "host": "login-ice.pace.gatech.edu",
+      "args": ["-Y"],
+      "projects": [
+        {
+          "paths": ["/home/hice1/vkumar389/s3220-labs-sp2026"],
         },
-        "C": {
-            "show_inline_completions": false
+      ],
+    },
+  ],
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "play_sound_when_agent_done": true,
+    "use_modifier_to_send": false,
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "",
+      },
+    },
+  },
+  "languages": {
+    "Plain Text": {
+      "show_edit_predictions": false,
+    },
+    "C": {
+      "show_edit_predictions": false,
+    },
+    "Python": {
+      "show_edit_predictions": false,
+    },
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "strict",
         },
-        "Python": {
-            "show_inline_completions": false
-        }
+      },
     },
-    "lsp": {
-        "pyright": {
-            "settings": {
-                "python.analysis": {
-                    "diagnosticMode": "workspace",
-                    "typeCheckingMode": "strict"
-                }
-            }
-        }
-    },
-    "base_keymap": "VSCode",
-    "theme": "Rosé Pine",
-    "vim_mode": true,
-    "ui_font_size": 16,
-    "ui_font_family": "Iosevka Nerd Font Mono",
-    "buffer_font_size": 16,
-    "buffer_font_family": "Monaspace Neon",
-    "autosave": "on_focus_change",
-    "tab_size": 4
+  },
+  "preview_tabs": {
+    "enabled": false,
+  },
+  "base_keymap": "VSCode",
+  "theme": "Gruvbox Light",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "ui_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_size": 16,
+  "buffer_font_family": "Monaspace Neon",
+  "autosave": "on_focus_change",
+  "tab_size": 2,
 }
