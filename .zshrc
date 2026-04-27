@@ -104,3 +104,13 @@ unset __conda_setup
 
 # Added by Antigravity
 export PATH="/Users/vigsk17/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/vigsk17/.bun/_bun" ] && source "/Users/vigsk17/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/vigsk17/.antigravity/antigravity/bin:$PATH"
