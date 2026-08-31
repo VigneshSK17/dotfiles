@@ -26,13 +26,14 @@
     },
   ],
   "agent": {
+    "dock": "left",
     "default_profile": "write",
     "default_model": {
       "effort": "high",
       "provider": "copilot_chat",
       "model": "gpt-5-mini",
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "use_modifier_to_send": false,
   },
   "context_servers": {
@@ -71,7 +72,7 @@
     "enabled": false,
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Light",
+  "theme": "Kanagawa Dragon",
   "vim_mode": true,
   "ui_font_size": 16,
   "ui_font_family": "Iosevka Nerd Font Mono",
