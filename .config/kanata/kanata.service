@@ -4,7 +4,7 @@ After=user.slice
 StartLimitIntervalSec=0
 
 [Service]
-ExecStart=/home/vigsk17/.local/bin/kanata --cfg /home/vigsk17/.config/kanata/config.kbd
+ExecStart=/usr/bin/kanata --cfg /home/vigneshsk/.config/kanata/config.kbd
 Type=simple
 TimeoutStartSec=0
 
