@@ -1,5 +1,5 @@
 return {
-	url = "https://codeberg.org/andyg/leap.nvim",
+	"ggandor/leap.nvim",
 	dependencies = {
 		"tpope/vim-repeat",
 	},

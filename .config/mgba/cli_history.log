@@ -1,0 +1,15 @@
+help
+help
+print SCANLINECOUNTER
+p state
+p sc
+p sc
+p HEIGHT
+p scanlinecounter
+help
+status
+v
+c
+events
+h
+p i

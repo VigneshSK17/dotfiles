@@ -1,6 +1,11 @@
 # Set PATH and other env vars
 export PATH=$HOME/.local/bin:/opt/local/bin:$HOME/.pyenv/bin/:$PATH
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+	export JAVA_HOME=$(/usr/libexec/java_home -v 21.0.5)
+	export PATH=$JAVA_HOME/bin:$PATH
+fi
+
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
@@ -48,6 +53,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 
 # Keybindings
+set -o emacs
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -64,6 +70,10 @@ alias ls="lsd -lah --git"
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias glp='git log --pretty=format:"%C(yellow)%h%Creset - %C(green)%an%Creset, %ar : %s"'
+
+alias antlr4='java -Xmx500M -cp "$HOME/Downloads//antlr-4.13.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "$HOME/Downloads/antlr-4.13.2-complete.jar:./build:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
 # End of zshrc
 
@@ -71,13 +81,39 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
 	source /Users/vigsk17/.docker/init-zsh.sh || true # Added by Docker Desktop
 
-	#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-	export SDKMAN_DIR="$HOME/.sdkman"
-	[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+	else
+		if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+			. "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+		else
+			export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+		fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
+
+	# Added by Antigravity
+	export PATH="/Users/vigsk17/.antigravity/antigravity/bin:$PATH"
+
+	# bun completions
+	[ -s "/Users/vigsk17/.bun/_bun" ] && source "/Users/vigsk17/.bun/_bun"
+
+	# bun
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$BUN_INSTALL/bin:$PATH"
 elif [[ "$(uname -s)" == "Linux" ]]; then
 	# Linux-specific commands
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
